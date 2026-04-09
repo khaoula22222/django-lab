@@ -25,8 +25,9 @@ SECRET_KEY = 'django-insecure-kpduf#43thv_#k)*1$+$c^bd^cll2((270#++30_w4%==2(lh)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS = ["http://localhost:8000"]
 
 # Application definition
 
@@ -75,12 +76,12 @@ WSGI_APPLICATION = 'helloworld.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'django_db',
-        'USER': 'django_user',
-        'PASSWORD': 'django_pass',
-        'HOST': 'db',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+        #'USER': 'django_user',
+        #'PASSWORD': 'django_pass',
+        #'HOST': 'db',
+        #'PORT': '5432',
     }
 }
 
